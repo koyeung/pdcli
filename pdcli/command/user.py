@@ -4,7 +4,7 @@ import json
 from ..api.user import get_user, ls_user
 
 
-def user(*, user_id: str = None) -> str:
+def user(user_id: str = None) -> str:
     """Get user.
 
     :param user_id: user id. "me" for current user.

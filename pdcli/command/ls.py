@@ -9,7 +9,6 @@ from ..api.incident import Status, Urgency, list_incidents
 
 
 def ls(  # pylint: disable=invalid-name
-    *,
     since: str = None,
     statuses: List[str] = None,
     user_ids: List[str] = None,
@@ -26,6 +25,7 @@ def ls(  # pylint: disable=invalid-name
     :param column: return rows of columns, instead of json string
     :param delimiter: delimiter used for column output
     """
+    # pylint: disable=too-many-arguments
     if statuses:
         if isinstance(statuses, str):
             statuses = [statuses]
