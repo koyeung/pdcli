@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "pdcli"
+version = "0.1.0-alpha.0"
+description = "PD cli"
+authors = ["King-On Yeung <koyeung@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.12.2"
+pytest = "^6.2.5"
+black = "^21.12b0"
+pydocstyle = "^6.1.1"
+xenon = "^0.8.0"
+mypy = "^0.910"
+pytest-cov = "^3.0.0"
+jake = "^1.2.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pydocstyle]
+ignore = "D104"
