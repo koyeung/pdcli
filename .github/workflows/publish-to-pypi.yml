@@ -32,6 +32,7 @@ jobs:
           poetry build
 
       - name: Publish distribution to PIPI
+        if: startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@master
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
