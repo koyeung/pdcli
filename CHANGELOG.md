@@ -4,3 +4,5 @@
 
 Added
 * `pd ls`
+* `pd user`
+
