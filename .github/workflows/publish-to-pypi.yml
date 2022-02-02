@@ -1,8 +1,5 @@
 name: Publish Python distributions to PYPI
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   build-n-publish:
