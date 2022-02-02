@@ -1,5 +1,8 @@
 [tool.poetry]
-name = "pdcli"
+name = "python-pdcli"
+packages = [
+    { include="pdcli", from="." },
+]
 version = "0.0.0"
 description = "PD cli"
 authors = ["King-On Yeung <koyeung@gmail.com>"]
