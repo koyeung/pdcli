@@ -3,7 +3,7 @@ name = "python-pdcli"
 packages = [
     { include="pdcli", from="." },
 ]
-version = "0.0.2"
+version = "0.0.3"
 description = "PD cli"
 authors = ["King-On Yeung <koyeung@gmail.com>"]
 readme = "README.md"
