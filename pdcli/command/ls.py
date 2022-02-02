@@ -21,8 +21,8 @@ def ls(  # pylint: disable=invalid-name
 
     :param since: since date
     :param statuses: filter by statuses
-    :param user_ids: filter by user id if provided
-    :param urgency: filter by urgency if provided
+    :param user_ids: filter by user id
+    :param urgency: filter by urgency
     :param column: return rows of columns, instead of json string
     :param delimiter: delimiter used for column output
     """
