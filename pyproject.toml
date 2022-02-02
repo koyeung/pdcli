@@ -3,6 +3,7 @@ name = "pdcli"
 version = "0.0.0"
 description = "PD cli"
 authors = ["King-On Yeung <koyeung@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
