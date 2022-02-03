@@ -1,13 +1,13 @@
 """Implement pd ack command."""
-from typing import List
 import json
 import sys
+from typing import List, Union
 
-from ..api.incident import update_incidents, Status
+from ..api.incident import Status, update_incidents
 
 
 def ack(
-    incident_ids: List[str] = None,
+    incident_ids: Union[str, List[str]] = None,
 ) -> str:
     """Acknowledge incidents.
 

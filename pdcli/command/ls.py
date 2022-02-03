@@ -3,15 +3,15 @@ import datetime
 import io
 import json
 from csv import DictWriter
-from typing import List
+from typing import List, Union
 
 from ..api.incident import Status, Urgency, list_incidents
 
 
 def ls(  # pylint: disable=invalid-name
     since: str = None,
-    statuses: List[str] = None,
-    user_ids: List[str] = None,
+    statuses: Union[str, List[str]] = None,
+    user_ids: Union[str, List[str]] = None,
     urgency: str = None,
     column: bool = False,
     delimiter: str = "\t",

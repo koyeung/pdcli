@@ -1,14 +1,17 @@
 """Interface to user endpoint."""
 import logging
-from typing import List
+from typing import Dict, List
 
 from .session import get_api_session
 
 LOGGER = logging.getLogger(__name__)
 
 
-def get_user(*, user_id: str) -> dict:
-    """Get user."""
+def get_user(*, user_id: str) -> Dict:
+    """Get user.
+
+    :return: user dictionary
+    """
     session = get_api_session()
     return session.rget(f"/users/{user_id}")
 
