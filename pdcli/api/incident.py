@@ -51,3 +51,28 @@ def list_incidents(
     incidents = session.list_all("incidents", params=params)
 
     return incidents
+
+
+def update_incidents(
+    *,
+    updates: List[Dict],
+) -> List:
+    """Update incidents."""
+
+    def convert_enum_to_json_encodable(key, value):
+        if key == "status":
+            value = value.value
+        return key, value
+
+    updates = [
+        dict(
+            convert_enum_to_json_encodable(key=key, value=value)
+            for key, value in update.items()
+        )
+        for update in updates
+    ]
+
+    session = get_api_session()
+    results = session.rput("incidents", json=updates)
+
+    return results

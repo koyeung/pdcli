@@ -7,7 +7,10 @@ Versions before 0.1.0 are untracked
 
 ## [Unreleased]
 ### Added
+* `pd ack`
 * `py.typed` file
+
+### Changed
 * require sort import by isort
 
 
