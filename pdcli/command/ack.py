@@ -6,12 +6,12 @@ from typing import List, Union
 from ..api.incident import Status, update_incidents
 
 
-def ack(
-    incident_ids: Union[str, List[str]] = None,
-) -> str:
+def ack(incident_ids: Union[str, List[str]] = None) -> str:
     """Acknowledge incidents.
 
     :param incident_ids: incident ids
+
+    :return: incident dictionaries in json
     """
     if not incident_ids:
         incidents = json.load(sys.stdin)
@@ -26,6 +26,6 @@ def ack(
         for id in incident_ids
     ]
 
-    result = update_incidents(updates=updates)
+    result = update_incidents(incidents=updates)
 
     return json.dumps(result)

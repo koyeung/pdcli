@@ -24,6 +24,8 @@ def ls(  # pylint: disable=invalid-name
     :param urgency: filter by urgency
     :param column: return rows of columns, instead of json string
     :param delimiter: delimiter used for column output
+
+    :return: incident dictionaries in json or incidents in tabular form
     """
     # pylint: disable=too-many-arguments
     if statuses:

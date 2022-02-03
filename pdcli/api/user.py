@@ -16,7 +16,10 @@ def get_user(*, user_id: str) -> Dict:
     return session.rget(f"/users/{user_id}")
 
 
-def ls_user() -> List:
-    """List users."""
+def ls_user() -> List[Dict]:
+    """List users.
+
+    :return: user dictionaries
+    """
     session = get_api_session()
     return session.list_all("users")

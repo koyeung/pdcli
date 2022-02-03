@@ -31,7 +31,10 @@ def list_incidents(
     user_ids: Optional[List[str]] = None,
     urgency: Optional[Urgency] = None,
 ) -> List:
-    """List incidents."""
+    """List incidents.
+
+    :return: incident dictionaries
+    """
     params: Dict[str, Any] = {}
     if since:
         params["since"] = since.isoformat()
@@ -53,26 +56,29 @@ def list_incidents(
     return incidents
 
 
-def update_incidents(
-    *,
-    updates: List[Dict],
-) -> List:
-    """Update incidents."""
+def update_incidents(*, incidents: List[Dict]) -> List:
+    """Update incidents.
+
+    :param incidents: incident dictionaries containing changes to be updated
+
+    :return: incident dictionaries
+    """
 
     def convert_enum_to_json_encodable(key, value):
+        # api interface should always be in enum if available to avoid typo on literals
         if key == "status":
             value = value.value
         return key, value
 
-    updates = [
+    incidents = [
         dict(
             convert_enum_to_json_encodable(key=key, value=value)
-            for key, value in update.items()
+            for key, value in incident.items()
         )
-        for update in updates
+        for incident in incidents
     ]
 
     session = get_api_session()
-    results = session.rput("incidents", json=updates)
+    results = session.rput("incidents", json=incidents)
 
     return results
