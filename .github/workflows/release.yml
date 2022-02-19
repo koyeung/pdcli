@@ -5,7 +5,6 @@ on: [release]
 jobs:
 
   publish:
-    needs: tests
     name: Build and publish Python distribution to PYPI
     runs-on: ubuntu-latest
     steps:
