@@ -8,14 +8,13 @@ Versions before 0.1.0 are untracked
 ## [Unreleased]
 ### Added
 * `pd ack`
+* `pd merge`
 * `py.typed` file
 
 ### Changed
 * require sort import by isort
-
-
-### Changed
 * `pd ls` - `--column` is replaced by `--row`
+
 
 ## [0.1.3] - 2022-02-19
 ### Changed

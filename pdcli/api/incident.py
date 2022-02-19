@@ -82,3 +82,17 @@ def update_incidents(*, incidents: List[Dict]) -> List:
     results = session.rput("incidents", json=incidents)
 
     return results
+
+
+def merge_incidents(*, source_incidents: List[Dict], target_incident_id: str) -> Dict:
+    """Merge incidents.
+
+    :param source_incidents: dictionaries containing incident ids
+
+    :return: target incident dictionary
+    """
+    session = get_api_session()
+    payload = {"source_incidents": source_incidents}
+    result = session.put(f"incidents/{target_incident_id}/merge", json=payload)
+
+    return result.json()
