@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 Versions before 0.1.0 are untracked
 
 ## [Unreleased]
+
+## [0.1.0]
 ### Added
 * `pd ls`
 * `pd user`
@@ -16,4 +18,5 @@ Versions before 0.1.0 are untracked
 * replace [jake](https://pypi.org/project/jake/) by [pip-audit](https://pypi.org/project/pip-audit/)
 
 
-[Unreleased]: https://github.com/koyeung/python-pdcli/compare/0.0.3...HEAD
+[Unreleased]: https://github.com/koyeung/python-pdcli/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/koyeung/python-pdcli/releases/tag/0.1.0
