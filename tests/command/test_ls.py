@@ -19,12 +19,12 @@ def test_ls():
     session_mock.list_all.assert_called_once_with("incidents", params={})
 
 
-def test_ls__columns():
+def test_ls__rows():
 
     session_mock = Mock(list_all=Mock(return_value=INCIDENTS))
 
     with patch("pdcli.api.incident.get_api_session", return_value=session_mock):
-        result = ls(column=True)
+        result = ls(row=True)
 
     with io.StringIO(result) as file_:
         table = list(csv.DictReader(file_, delimiter="\t"))

@@ -13,17 +13,17 @@ def ls(  # pylint: disable=invalid-name
     statuses: Union[str, List[str]] = None,
     user_ids: Union[str, List[str]] = None,
     urgency: str = None,
-    column: bool = False,
+    row: bool = False,
     delimiter: str = "\t",
 ) -> str:
     """List incidents.
 
     :param since: since date
-    :param statuses: filter by statuses
+    :param statuses: filter by statuses, e.g. triggered, acknowledged and resolved
     :param user_ids: filter by user id
-    :param urgency: filter by urgency
-    :param column: return rows of columns, instead of json string
-    :param delimiter: delimiter used for column output
+    :param urgency: filter by urgency, e.g. high, low
+    :param row: return incident rows, instead of json string
+    :param delimiter: delimiter used for row output
 
     :return: incident dictionaries in json or incidents in tabular form
     """
@@ -47,8 +47,8 @@ def ls(  # pylint: disable=invalid-name
         urgency=Urgency(urgency) if urgency else None,
     )
 
-    if column:
-        return _as_columns(
+    if row:
+        return _as_rows(
             incidents=incidents,
             columns=[
                 "status",
@@ -64,7 +64,7 @@ def ls(  # pylint: disable=invalid-name
     return json.dumps(incidents)
 
 
-def _as_columns(*, incidents, columns, delimiter):
+def _as_rows(*, incidents, columns, delimiter):
 
     column_transforms = {
         "service": lambda x: x["summary"],
