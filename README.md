@@ -1,6 +1,5 @@
 # PD cli
 
-
 ## Test
 ```
 export PD_ACCOUNT_TOKEN=xyz
@@ -15,6 +14,23 @@ Default output is json string. In order to extract field:
 # to extract "id" from user record
 pd user --user-id=me | jq -r .id
 ```
+
+## Release
+1. After merge to `develop`
+
+   ```bash
+   git flow release start x.y.z
+   poetry version x.y.z
+   ```
+
+1. Finalize `CHANGELOG.md`
+1. Commit changes, then
+
+   ```bash
+   git flow release finish --push
+   ```
+
+1. Create a release from github UI to push distribution to pypi
 
 
 ## Reference
