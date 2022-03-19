@@ -8,6 +8,8 @@ Versions before 0.1.0 are untracked
 ## [Unreleased]
 ### Added
 * `py.typed` file
+* require sort import by isort
+
 
 ## [0.1.3] - 2022-02-19
 ### Changed

@@ -27,6 +27,7 @@ mypy = ">=0.931"
 pytest-cov = ">=3.0.0"
 ipython = ">=8.0.1"
 pip-audit = ">=1.1.2"
+isort = "^5.10.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -35,5 +36,12 @@ build-backend = "poetry.core.masonry.api"
 [tool.pydocstyle]
 ignore = "D104,D203,D213"
 
+[tool.isort]
+profile = "black"
+
+# match line_length with black
+line_length = 88
+
 [tool.poetry.scripts]
 pd = 'pdcli.cli:pd'
+
