@@ -1,8 +1,8 @@
 """Interface to incident endpoint."""
-import logging
 import datetime
-from typing import Optional, List, Dict, Any
+import logging
 from enum import Enum
+from typing import Any, Dict, List, Optional
 
 from .session import get_api_session
 

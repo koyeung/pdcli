@@ -3,7 +3,6 @@ import os
 
 from pdpyras import APISession  # type: ignore
 
-
 #: PD API key
 API_KEY = os.environ.get("PD_ACCOUNT_TOKEN")
 

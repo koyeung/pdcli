@@ -1,9 +1,9 @@
 """Implement pd ls command."""
 import datetime
-from typing import List
+import io
 import json
 from csv import DictWriter
-import io
+from typing import List
 
 from ..api.incident import Status, Urgency, list_incidents
 
