@@ -1,5 +1,5 @@
-from unittest.mock import Mock, patch
 import json
+from unittest.mock import Mock, patch
 
 from pdcli.command.merge import merge
 

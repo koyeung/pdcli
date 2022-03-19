@@ -1,8 +1,8 @@
 """Implement pd merge command."""
-import logging
-from typing import List
 import json
+import logging
 import sys
+from typing import List
 
 from ..api.incident import merge_incidents
 

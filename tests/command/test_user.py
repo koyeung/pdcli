@@ -1,8 +1,7 @@
-from unittest.mock import Mock, patch
 import json
+from unittest.mock import Mock, patch
 
 from pdcli.command.user import user
-
 
 _USER = {
     "name": "Zvezdochka",

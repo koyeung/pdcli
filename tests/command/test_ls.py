@@ -1,7 +1,7 @@
-from unittest.mock import Mock, patch
-import json
 import csv
 import io
+import json
+from unittest.mock import Mock, patch
 
 from pdcli.command.ls import ls
 

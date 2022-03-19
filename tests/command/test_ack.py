@@ -1,6 +1,6 @@
-from unittest.mock import Mock, patch
-import json
 import io
+import json
+from unittest.mock import Mock, patch
 
 from pdcli.command.ack import ack
 
